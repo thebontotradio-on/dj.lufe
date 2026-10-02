@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ LUFE — DJ Entertainment & Event Booking</title>
+  <meta name="description" content="DJ LUFE — DJ entertainment for private events, weddings, parties, corporate events and special occasions.">
+  
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="DJ LUFE — DJ Entertainment & Event Booking">
+  <meta property="og:description" content="DJ LUFE — DJ entertainment for private events, weddings, parties, corporate events and special occasions.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+          },
+          colors: {
+            cyber: {
+              black: '#050508',
+              deep: '#090B14',
+              card: '#0D101E',
+              cardHover: '#13182C',
+              cyan: '#00E5FF',
+              cyanDim: 'rgba(0, 229, 255, 0.15)',
+              violet: '#7A2CFF',
+              violetDim: 'rgba(122, 44, 255, 0.18)',
+              magenta: '#FF1493',
+              chrome: '#EAF6FF',
+              silver: '#9FB3C8',
+              gold: '#D4AF37',
+              goldDim: 'rgba(212, 175, 55, 0.2)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-black: #050508;
+      --cyan: #00E5FF;
+      --violet: #7A2CFF;
+      --magenta: #FF1493;
+      --chrome: #EAF6FF;
+      --gold: #D4AF37;
+      /* Dynamic Header & Hero Safe Area Dimensions */
+      --header-height: 84px;
+      --hero-safe-top: calc(var(--header-height) + 28px);
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --header-height: 72px;
+        --hero-safe-top: calc(var(--header-height) + 20px);
+      }
+    }
+
+    body {
+      background-color: var(--bg-black);
+      color: #EAF6FF;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #00E5FF;
+      selection-color: #050508;
+    }
+
+    ::selection {
+      background: rgba(0, 229, 255, 0.85);
+      color: #050508;
+    }
+
+    /* Cyber Chrome Text Gradients */
+    .text-chrome-glow {
+      background: linear-gradient(180deg, #FFFFFF 0%, #EAF6FF 45%, #9FB3C8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-cyan-gradient {
+      background: linear-gradient(135deg, #EAF6FF 0%, #00E5FF 55%, #7A2CFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-violet-cyan {
+      background: linear-gradient(135deg, #00E5FF 0%, #A855F7 60%, #FF1493 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gold-subtle {
+      background: linear-gradient(135deg, #FFF5D1 0%, #D4AF37 60%, #997B24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Cyber Luxury Borders & Panels */
+    .border-cyber-subtle {
+      border: 1px solid rgba(0, 229, 255, 0.18);
+    }
+
+    .border-cyber-hover:hover {
+      border-color: rgba(0, 229, 255, 0.6);
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.15), 0 0 45px rgba(122, 44, 255, 0.1);
+    }
+
+    .cyber-panel {
+      background: rgba(13, 16, 30, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 229, 255, 0.12);
+    }
+
+    /* Futuristic Cyber Button */
+    .cyber-btn {
+      background: linear-gradient(135deg, #00E5FF 0%, #00A3FF 45%, #7A2CFF 100%);
+      color: #050508;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      position: relative;
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease, filter 0.25s ease;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+      overflow: hidden;
+    }
+
+    .cyber-btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+      transform: rotate(25deg);
+      opacity: 0;
+      transition: none;
+    }
+
+    .cyber-btn:hover::after {
+      opacity: 1;
+      left: 140%;
+      transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cyber-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 32px rgba(0, 229, 255, 0.55), 0 0 48px rgba(122, 44, 255, 0.35);
+      filter: brightness(1.1);
+    }
+
+    .cyber-btn-outline {
+      background: rgba(9, 11, 20, 0.75);
+      border: 1px solid rgba(0, 229, 255, 0.45);
+      color: #EAF6FF;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cyber-btn-outline:hover {
+      border-color: #00E5FF;
+      background: rgba(0, 229, 255, 0.12);
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.35), inset 0 0 15px rgba(0, 229, 255, 0.15);
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    /* Micro Scanline Overlay */
+    .scanline-bg {
+      background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0) 50%,
+        rgba(0, 229, 255, 0.02) 50%,
+        rgba(0, 229, 255, 0.02)
+      );
+      background-size: 100% 4px;
+    }
+
+    /* Multi-layered Asymmetric Background Drift Layers */
+    @keyframes ambientDriftA {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+      50% { transform: translate(40px, -25px) scale(1.08); opacity: 0.4; }
+    }
+    @keyframes ambientDriftB {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+      50% { transform: translate(-35px, 30px) scale(1.12); opacity: 0.35; }
+    }
+    .layer-drift-cyan {
+      animation: ambientDriftA 17s ease-in-out infinite alternate;
+    }
+    .layer-drift-violet {
+      animation: ambientDriftB 23s ease-in-out infinite alternate;
+    }
+
+    /* Ambient Cursor Dot */
+    #cursor-light {
+      pointer-events: none;
+      transition: transform 0.07s ease-out, opacity 0.3s ease, width 0.2s ease, height 0.2s ease;
+      z-index: 9999;
+    }
+
+    #cursor-halo {
+      pointer-events: none;
+      transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease, border-color 0.2s ease;
+      z-index: 9998;
+    }
+
+    /* Trailing Micro-Particle Canvas */
+    #cursor-trail-canvas {
+      pointer-events: none;
+      z-index: 9997;
+    }
+
+    /* Subtle Jog Wheel Spin */
+    @keyframes spinDisc {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .spin-slow {
+      animation: spinDisc 16s linear infinite;
+    }
+    .spin-slow.paused {
+      animation-play-state: paused;
+    }
+
+    /* Holographic Light Sweep (Asymmetric Timing 6s & 11s) */
+    @keyframes holoBeam {
+      0% { transform: translateX(-160%) skewX(-20deg); opacity: 0; }
+      20% { opacity: 0.7; }
+      60% { transform: translateX(220%) skewX(-20deg); opacity: 0; }
+      100% { transform: translateX(220%) skewX(-20deg); opacity: 0; }
+    }
+    .animate-holo-sweep {
+      animation: holoBeam 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .animate-holo-sweep-slow {
+      animation: holoBeam 11s cubic-bezier(0.4, 0, 0.2, 1) infinite 2s;
+    }
+
+    /* Cyber Grid Background Pattern */
+    .cyber-grid-overlay {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 229, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(122, 44, 255, 0.035) 1px, transparent 1px);
+    }
+
+    /* Subject-Safe Smart Image Fitting System with Headroom Protection */
+    .photo-smart {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: var(--img-pos, 50% 15%);
+      transform: scale(var(--img-scale, 0.98)) translateY(var(--img-safe-top, 0px));
+      transform-origin: var(--img-origin, 50% 12%);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), object-position 0.35s ease;
+      will-change: transform, object-position;
+    }
+
+    /* Head-Safe Frame Container for Hero & Portraits */
+    .head-safe-frame {
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 30%, #0d1224 0%, #050508 100%);
+    }
+
+    /* Button Tactile Pop & Compression */
+    .cyber-btn:active, .cyber-btn-outline:active {
+      transform: scale(0.96) !important;
+      transition: transform 0.08s ease-in;
+    }
+
+    /* 5-Phase Click/Tap Shockwave & Impact Elements */
+    .impact-flash {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(234, 246, 255, 0.85) 0%, rgba(0, 229, 255, 0.5) 40%, transparent 75%);
+      pointer-events: none;
+      z-index: 70;
+      animation: flashFade 0.22s ease-out forwards;
+    }
+
+    @keyframes flashFade {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .cyber-ripple {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: scale(0);
+      animation: rippleAnim 0.6s cubic-bezier(0.1, 0.85, 0.25, 1) forwards;
+      background: radial-gradient(circle, rgba(0, 229, 255, 0.55) 0%, rgba(122, 44, 255, 0.35) 50%, rgba(212, 175, 55, 0.2) 75%, transparent 100%);
+      border: 1px solid rgba(0, 229, 255, 0.8);
+      z-index: 65;
+    }
+
+    @keyframes rippleAnim {
+      0% { transform: scale(0); opacity: 1; }
+      70% { opacity: 0.8; }
+      100% { transform: scale(3.2); opacity: 0; }
+    }
+
+    /* Choreographed Section Entry Archetypes */
+    .reveal-elem {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-elem.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Entry Archetype A: Horizontal Scan Sweep */
+    .reveal-scan {
+      position: relative;
+    }
+    .reveal-scan::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #00E5FF, #7A2CFF, transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 30;
+      pointer-events: none;
+    }
+    .reveal-scan.revealed::before {
+      transform: scaleX(1);
+    }
+
+    /* Entry Archetype B: Neon Line Expansion */
+    .reveal-neon-line {
+      opacity: 0;
+      transform: scale(0.97);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-neon-line.revealed {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Hero Startup Choreography Elements */
+    #hero-startup-scan {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00E5FF 50%, #D4AF37 80%, transparent);
+      box-shadow: 0 0 20px #00E5FF, 0 0 35px #7A2CFF;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 45;
+    }
+
+    /* 3D Interactive Card Perspective */
+    .card-perspective {
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+    .card-inner-tilt {
+      transition: transform 0.25s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Equalizer Waveform Heights */
+    @keyframes cyberEq {
+      0%, 100% { height: 6px; }
+      50% { height: 28px; }
+    }
+
+    /* Micro Glitch System (50ms - 180ms periodic burst) */
+    @keyframes periodicMicroGlitch {
+      0%, 97%, 100% { transform: translate(0, 0); filter: none; }
+      97.5% { transform: translate(-2px, 1px) skewX(-1.5deg); filter: drop-shadow(-2px 0 #00E5FF) drop-shadow(2px 0 #FF1493); }
+      98% { transform: translate(2px, -1px); filter: none; }
+      98.5% { transform: translate(-1px, -0.5px) skewX(1deg); filter: drop-shadow(2px 0 #7A2CFF); }
+      99% { transform: translate(0, 0); filter: none; }
+    }
+    .glitch-subtle {
+      animation: periodicMicroGlitch 8s infinite;
+    }
+
+    /* Staggered Scroll Reveal Classes */
+    .reveal-elem {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-elem.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Magnetic CTA Button Baseline */
+    .magnetic-btn {
+      transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease;
+    }
+
+    /* Reduced Motion Fallbacks */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      #cursor-light, #cursor-halo, #cursor-trail-canvas { display: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-cyber-black text-cyber-chrome antialiased selection:bg-cyber-cyan selection:text-black scanline-bg">
+
+  <!-- Ambient Cursor Glow & Violet Halo (Desktop Only) -->
+  <div id="cursor-light" class="fixed top-0 left-0 w-6 h-6 rounded-full opacity-0 pointer-events-none hidden lg:block -translate-x-1/2 -translate-y-1/2 mix-blend-screen bg-cyber-cyan/50 blur-sm shadow-[0_0_20px_#00E5FF]"></div>
+  <div id="cursor-halo" class="fixed top-0 left-0 w-12 h-12 rounded-full opacity-0 pointer-events-none hidden lg:block -translate-x-1/2 -translate-y-1/2 border border-cyber-violet/40 bg-cyber-violet/10 blur-[2px] shadow-[0_0_24px_rgba(122,44,255,0.35)]"></div>
+  <canvas id="cursor-trail-canvas" class="fixed inset-0 pointer-events-none hidden lg:block"></canvas>
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-cyber-cyan via-cyber-violet to-cyber-gold z-[110] w-0 transition-all duration-75"></div>
+
+  <!-- PRELOADER SCREEN -->
+  <div id="preloader" class="fixed inset-0 bg-[#050508] z-[2000] flex flex-col items-center justify-center transition-opacity duration-500">
+    <div class="flex flex-col items-center max-w-sm px-6 text-center relative">
+      
+      <!-- Cyan & Violet Ambient Backlight -->
+      <div class="absolute -inset-8 bg-gradient-to-r from-cyber-cyan/15 via-cyber-violet/20 to-cyber-magenta/10 rounded-full blur-3xl animate-pulse"></div>
+
+      <!-- OFFICIAL DJ LUFE LOGO (Actual Image Asset) -->
+      <div id="preloader-logo-wrap" class="relative w-28 h-28 sm:w-32 sm:h-32 mb-5 transition-all duration-700 transform opacity-0 scale-95">
+        <img 
+          src="https://cdn.phototourl.com/member/2026-10-02-9eba31a8-1a74-4839-9d4e-e5a5918b8d67.jpg" 
+          alt="DJ LUFE Official Logo" 
+          class="w-full h-full object-contain rounded-2xl shadow-[0_0_30px_rgba(0,229,255,0.35)]"
+        />
+      </div>
+
+      <h1 class="font-display text-xl sm:text-2xl font-bold tracking-[0.25em] text-cyber-chrome mb-1">
+        DJ LUFE
+      </h1>
+      
+      <!-- Subtle Gold Line Drawing Underneath Logo -->
+      <div class="relative w-44 h-[1.5px] bg-white/10 my-3 overflow-hidden rounded-full">
+        <div id="preloader-line" class="absolute inset-0 bg-gradient-to-r from-cyber-gold via-cyber-cyan to-cyber-gold transform -translate-x-full transition-transform duration-700 ease-out"></div>
+      </div>
+
+      <p class="text-[11px] uppercase tracking-[0.25em] text-cyber-silver font-light">
+        The Sound. The Energy. The Experience.
+      </p>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-[100] transition-all duration-300 px-6 lg:px-12 bg-gradient-to-b from-[#050508]/90 via-[#050508]/40 to-transparent h-[72px] md:h-[84px] flex items-center">
+    <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
+      
+      <!-- Brand Logo Link (Actual Image) -->
+      <a href="#home" class="flex items-center gap-3.5 group relative" aria-label="DJ LUFE Home">
+        <div class="w-10 h-10 rounded-xl overflow-hidden border border-cyber-cyan/30 shadow-[0_0_15px_rgba(0,229,255,0.25)] transition-all duration-300 group-hover:scale-105 group-hover:border-cyber-cyan group-hover:shadow-[0_0_25px_rgba(0,229,255,0.45)]">
+          <img 
+            src="https://cdn.phototourl.com/member/2026-10-02-9eba31a8-1a74-4839-9d4e-e5a5918b8d67.jpg" 
+            alt="DJ LUFE Logo" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display text-lg font-bold tracking-[0.2em] text-cyber-chrome group-hover:text-cyber-cyan transition-colors">DJ LUFE</span>
+          <span class="text-[8px] uppercase tracking-[0.3em] text-cyber-silver font-mono">Artist &bull; Sonic Architect</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links with animated active indicator and moving glow dot -->
+      <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em] font-medium text-cyber-silver">
+        <a href="#home" class="nav-item hover:text-cyber-cyan transition-colors py-1.5 relative group">
+          <span>Home</span>
+          <span class="nav-indicator absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-cyber-cyan to-cyber-violet group-hover:w-full transition-all duration-300 rounded-full"></span>
+        </a>
+        <a href="#about" class="nav-item hover:text-cyber-cyan transition-colors py-1.5 relative group">
+          <span>About</span>
+          <span class="nav-indicator absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-cyber-cyan to-cyber-violet group-hover:w-full transition-all duration-300 rounded-full"></span>
+        </a>
+        <a href="#experience" class="nav-item hover:text-cyber-cyan transition-colors py-1.5 relative group">
+          <span>Experience</span>
+          <span class="nav-indicator absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-cyber-cyan to-cyber-violet group-hover:w-full transition-all duration-300 rounded-full"></span>
+        </a>
+        <a href="#gallery" class="nav-item hover:text-cyber-cyan transition-colors py-1.5 relative group">
+          <span>Gallery</span>
+          <span class="nav-indicator absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-cyber-cyan to-cyber-violet group-hover:w-full transition-all duration-300 rounded-full"></span>
+        </a>
+        <a href="#booking" class="nav-item hover:text-cyber-cyan transition-colors py-1.5 relative group">
+          <span>Booking</span>
+          <span class="nav-indicator absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-cyber-cyan to-cyber-violet group-hover:w-full transition-all duration-300 rounded-full"></span>
+        </a>
+      </nav>
+
+      <!-- Desktop Header Booking CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#booking" class="cyber-btn magnetic-btn px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.18em] flex items-center gap-2 group cursor-pointer">
+          <span>Book DJ LUFE</span>
+          <svg class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" aria-label="Toggle mobile navigation" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg border border-cyber-cyan/30 text-white focus:outline-none focus:border-cyber-cyan">
+        <span class="w-5 h-[2px] bg-cyber-cyan mb-1.5 transition-transform duration-300" id="hamburger-line-1"></span>
+        <span class="w-5 h-[2px] bg-cyber-chrome mb-1.5 transition-opacity duration-300" id="hamburger-line-2"></span>
+        <span class="w-5 h-[2px] bg-cyber-cyan transition-transform duration-300" id="hamburger-line-3"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER MENU -->
+  <div id="mobile-drawer" class="fixed inset-0 bg-[#050508]/98 backdrop-blur-2xl z-[200] flex flex-col justify-center items-center px-8 transition-all duration-300 opacity-0 pointer-events-none md:hidden">
+    <div class="w-16 h-16 rounded-2xl overflow-hidden border border-cyber-cyan/40 shadow-[0_0_25px_rgba(0,229,255,0.4)] mb-8">
+      <img src="https://cdn.phototourl.com/member/2026-10-02-9eba31a8-1a74-4839-9d4e-e5a5918b8d67.jpg" alt="DJ LUFE Mobile Logo" class="w-full h-full object-cover">
+    </div>
+
+    <nav class="flex flex-col items-center gap-6 text-center">
+      <a href="#home" class="mobile-nav-link text-xl tracking-[0.2em] font-display text-white uppercase hover:text-cyber-cyan">Home</a>
+      <a href="#about" class="mobile-nav-link text-xl tracking-[0.2em] font-display text-white uppercase hover:text-cyber-cyan">About</a>
+      <a href="#experience" class="mobile-nav-link text-xl tracking-[0.2em] font-display text-white uppercase hover:text-cyber-cyan">Experience</a>
+      <a href="#gallery" class="mobile-nav-link text-xl tracking-[0.2em] font-display text-white uppercase hover:text-cyber-cyan">Gallery</a>
+      <a href="#booking" class="mobile-nav-link text-xl tracking-[0.2em] font-display text-white uppercase hover:text-cyber-cyan">Booking</a>
+      
+      <!-- Thin Gold Accent Line -->
+      <div class="w-16 h-[1px] bg-cyber-gold/40 my-2"></div>
+      
+      <a href="#booking" class="mobile-nav-link cyber-btn px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em]">
+        Book DJ LUFE
+      </a>
+      
+      <button onclick="openWhatsAppChat()" class="text-xs uppercase tracking-[0.18em] text-cyber-silver hover:text-cyber-cyan flex items-center gap-2 mt-2">
+        <span class="w-2 h-2 rounded-full bg-cyber-cyan animate-pulse"></span>
+        Direct WhatsApp: +62 818-0945-7898
+      </button>
+    </nav>
+  </div>
+
+  <!-- HERO SECTION WITH SAFE VERTICAL HIERARCHY -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pb-16 pt-[var(--hero-safe-top)]" style="min-height: 100svh;">
+    
+    <!-- Hero Startup Scanning Laser -->
+    <div id="hero-startup-scan"></div>
+
+    <!-- Hero Background Image (DJ LUFE Photo 01 with Headroom Buffer Protection) -->
+    <div class="absolute inset-0 z-0 overflow-hidden head-safe-frame">
+      <img 
+        id="hero-bg-img"
+        src="https://cdn.phototourl.com/member/2026-10-02-347ef468-8653-4b14-a709-7b5d89f7fee7.jpg" 
+        alt="DJ LUFE Live Performance Atmosphere" 
+        class="photo-smart w-full h-full brightness-[0.38] contrast-[1.15]"
+      />
+      
+      <!-- Cyberpunk Lighting Overlays with Controlled Edge Lighting -->
+      <div class="absolute inset-0 bg-gradient-to-t from-cyber-black via-cyber-black/75 to-cyber-black/60"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-cyber-black/95 via-transparent to-cyber-black/95"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(0,229,255,0.14),_transparent_60%)] layer-drift-cyan"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(122,44,255,0.20),_transparent_70%)] layer-drift-violet"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_10%_30%,_rgba(255,20,147,0.1),_transparent_50%)]"></div>
+      
+      <!-- Cyber Grid Overlay in Hero -->
+      <div class="absolute inset-0 cyber-grid-overlay opacity-30 pointer-events-none"></div>
+
+      <!-- Holographic Moving Light Beam -->
+      <div class="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-cyber-cyan/12 to-transparent skew-x-12 animate-holo-sweep pointer-events-none"></div>
+    </div>
+
+    <!-- Gold & Cyber Dust Particles Canvas -->
+    <canvas id="particles-canvas" class="absolute inset-0 z-10 pointer-events-none"></canvas>
+
+    <!-- Hero Foreground Content with Protected Vertical Clearance & Staggered Reveal IDs -->
+    <div class="relative z-20 max-w-5xl mx-auto px-6 text-center flex flex-col items-center justify-center my-auto">
+      
+      <!-- Official DJ LUFE Logo (Startup Seq Item 1) -->
+      <div id="hero-logo-box" class="w-18 h-18 sm:w-24 sm:h-24 mb-5 sm:mb-6 relative group transition-all duration-700 opacity-0 scale-95">
+        <div class="absolute -inset-3 bg-gradient-to-r from-cyber-cyan/35 via-cyber-violet/30 to-cyber-gold/20 rounded-2xl blur-xl animate-pulse"></div>
+        <div class="relative w-full h-full rounded-2xl overflow-hidden border border-cyber-cyan/40 p-1 bg-cyber-card/85 shadow-[0_0_25px_rgba(0,229,255,0.35)]">
+          <img 
+            src="https://cdn.phototourl.com/member/2026-10-02-9eba31a8-1a74-4839-9d4e-e5a5918b8d67.jpg" 
+            alt="DJ LUFE Official Brand Identity" 
+            class="w-full h-full object-cover rounded-xl"
+          />
+        </div>
+      </div>
+
+      <!-- Main Headline (Startup Seq Item 2) -->
+      <div class="overflow-hidden mb-2 sm:mb-3 max-w-full">
+        <h1 id="hero-main-title" class="font-display font-bold tracking-[0.18em] sm:tracking-[0.22em] uppercase text-chrome-glow glitch-subtle text-center opacity-0 -translate-y-4 transition-all duration-700" style="font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1.1;">
+          DJ LUFE
+        </h1>
+      </div>
+
+      <!-- Supporting Statement (Startup Seq Item 3) -->
+      <p id="hero-tagline" class="font-display text-sm sm:text-lg lg:text-xl font-semibold tracking-[0.22em] sm:tracking-[0.28em] text-cyan-gradient uppercase mb-4 sm:mb-6 max-w-3xl leading-relaxed opacity-0 transition-all duration-700 delay-150">
+        THE SOUND. THE ENERGY. THE EXPERIENCE.
+      </p>
+
+      <!-- Editorial Intro Copy (Startup Seq Item 4) -->
+      <p id="hero-desc" class="font-body text-xs sm:text-sm lg:text-base text-cyber-silver font-light max-w-xl mb-8 sm:mb-10 leading-relaxed px-2 opacity-0 transition-all duration-700 delay-300">
+        Music, energy and atmosphere designed to make every event feel unforgettable. Engineered for exclusive private celebrations, high-profile corporate galas, and futuristic nightlife.
+      </p>
+
+      <!-- Action Buttons (Startup Seq Item 5) -->
+      <div id="hero-cta-box" class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto opacity-0 transition-all duration-700 delay-500">
+        <a href="#booking" class="cyber-btn magnetic-btn w-full sm:w-auto px-8 sm:px-9 py-3.5 sm:py-4 rounded-full text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3">
+          <span>Book DJ LUFE</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+
+        <a href="#experience" class="cyber-btn-outline magnetic-btn w-full sm:w-auto px-8 sm:px-9 py-3.5 sm:py-4 rounded-full text-xs uppercase tracking-[0.2em] flex items-center justify-center">
+          Explore Experience
+        </a>
+      </div>
+
+      <!-- Animated Waveform/Equalizer Micro Badge -->
+      <div class="mt-8 sm:mt-12 flex items-center gap-3 px-4 py-2 rounded-full border border-cyber-cyan/20 bg-cyber-deep/60 backdrop-blur-md shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+        <div class="flex items-end gap-[3px] h-3.5">
+          <span class="w-[2px] bg-cyber-cyan rounded-full animate-[cyberEq_1.2s_ease-in-out_infinite]"></span>
+          <span class="w-[2px] bg-cyber-violet rounded-full animate-[cyberEq_0.9s_ease-in-out_0.2s_infinite]"></span>
+          <span class="w-[2px] bg-cyber-cyan rounded-full animate-[cyberEq_1.4s_ease-in-out_0.4s_infinite]"></span>
+          <span class="w-[2px] bg-cyber-gold rounded-full animate-[cyberEq_1.0s_ease-in-out_0.1s_infinite]"></span>
+          <span class="w-[2px] bg-cyber-magenta rounded-full animate-[cyberEq_1.3s_ease-in-out_0.3s_infinite]"></span>
+        </div>
+        <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-cyber-silver font-mono">Available For 2026 / 2027 Bookings</span>
+      </div>
+
+    </div>
+
+    <!-- Scroll Down Exploration Indicator -->
+    <a href="#statement" class="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-cyber-silver hover:text-cyber-cyan transition-colors">
+      <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] font-light">Scroll To Explore</span>
+      <div class="w-5 h-8 rounded-full border border-cyber-cyan/30 flex justify-center pt-1.5">
+        <span class="w-1 h-2 bg-cyber-cyan rounded-full animate-bounce"></span>
+      </div>
+    </a>
+  </section>
+
+  <!-- BRAND STATEMENT SECTION -->
+  <section id="statement" class="relative py-28 px-6 bg-cyber-black border-y border-cyber-cyan/15 overflow-hidden reveal-scan">
+    <!-- Ambient Cyber Glows -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(122,44,255,0.08),_transparent_70%)] pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10 reveal-elem">
+      
+      <div class="flex items-center justify-center gap-3 mb-5">
+        <span class="w-6 h-[1px] bg-cyber-cyan"></span>
+        <span class="text-xs uppercase tracking-[0.35em] text-cyber-cyan font-medium">Curated Sonic Architecture</span>
+        <span class="w-6 h-[1px] bg-cyber-cyan"></span>
+      </div>
+
+      <h2 class="font-display text-3xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+        MORE THAN MUSIC.<br>
+        <span class="text-violet-cyan">IT'S AN EXPERIENCE.</span>
+      </h2>
+
+      <!-- Subtle Gold Signature Line Accent -->
+      <div class="w-24 h-[1.5px] bg-gradient-to-r from-transparent via-cyber-gold to-transparent mx-auto mb-8"></div>
+
+      <p class="font-body text-sm sm:text-lg lg:text-xl text-cyber-silver font-light max-w-3xl mx-auto leading-relaxed mb-12">
+        "Music is only part of the experience. DJ LUFE brings sound, energy and atmosphere together to create moments people remember."
+      </p>
+
+      <!-- Animated Electric Cyan / Violet Waveform Line -->
+      <div class="relative w-full max-w-2xl mx-auto h-16 flex items-center justify-center">
+        <canvas id="waveform-canvas" class="w-full h-full"></canvas>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="relative py-28 lg:py-36 px-6 lg:px-12 bg-cyber-deep overflow-hidden">
+    
+    <!-- Ambient Edge Lights -->
+    <div class="absolute top-1/2 left-0 w-96 h-96 bg-cyber-cyan/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyber-violet/8 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Editorial Portrait with Smart Focal Fitting (DJ LUFE Photo 02) -->
+      <div class="lg:col-span-5 relative group reveal-elem">
+        <!-- Ambient Back Glow -->
+        <div class="absolute -inset-4 bg-gradient-to-tr from-cyber-cyan/20 via-cyber-violet/25 to-cyber-gold/15 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div class="relative rounded-2xl overflow-hidden border border-cyber-cyan/30 p-2 bg-cyber-card/90 shadow-[0_15px_40px_rgba(0,0,0,0.8)]">
+          <!-- Thin Gold Micro-Line on Card Top Edge -->
+          <div class="absolute top-0 left-12 right-12 h-[1px] bg-gradient-to-r from-transparent via-cyber-gold to-transparent z-10"></div>
+          
+          <!-- Smart Adaptive Head-Safe Portrait Aspect Container with Top Breathing Margin -->
+          <div class="relative aspect-[3/4] sm:aspect-[4/5] rounded-xl overflow-hidden head-safe-frame">
+            <img 
+              id="about-portrait-img"
+              src="https://cdn.phototourl.com/member/2026-10-02-38ad6edc-6ee1-46d3-a750-a425a25b33f6.jpg" 
+              alt="DJ LUFE Editorial Artist Portrait" 
+              class="photo-smart w-full h-full filter contrast-105 brightness-95 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-cyber-black/90 via-transparent to-transparent"></div>
+            
+            <!-- Scanline Texture Overlay -->
+            <div class="absolute inset-0 scanline-bg pointer-events-none opacity-40"></div>
+
+            <!-- Floating Monogram / Profile Badge -->
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between p-3.5 rounded-xl bg-cyber-deep/85 backdrop-blur-md border border-cyber-cyan/25">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg overflow-hidden border border-cyber-cyan/40">
+                  <img src="https://cdn.phototourl.com/member/2026-10-02-9eba31a8-1a74-4839-9d4e-e5a5918b8d67.jpg" alt="LUFE Monogram" class="w-full h-full object-cover">
+                </div>
+                <div>
+                  <p class="text-[9px] uppercase tracking-[0.25em] text-cyber-cyan font-mono">Official Artist</p>
+                  <p class="font-display text-sm font-semibold tracking-wider text-white">DJ LUFE</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono text-cyber-gold bg-cyber-gold/10 px-2.5 py-1 rounded-md border border-cyber-gold/30">VERIFIED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Text Editorial -->
+      <div class="lg:col-span-7 flex flex-col justify-center reveal-elem">
+        
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-[1px] bg-cyber-cyan"></span>
+          <span class="text-xs uppercase tracking-[0.3em] text-cyber-cyan font-medium">The Art of Sound</span>
+        </div>
+
+        <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white mb-6">
+          MEET <span class="text-chrome-glow">DJ LUFE</span>
+        </h2>
+
+        <p class="font-body text-base sm:text-lg text-cyber-silver font-light leading-relaxed mb-8">
+          DJ LUFE brings music, energy and atmosphere together through a performance designed around the character of every event. From intimate private gatherings to corporate Galas and high-octane club settings, every transition and frequency is tuned to inspire collective euphoria.
+        </p>
+
+        <!-- Four Core Brand Qualities -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+          
+          <!-- Quality 1: Music -->
+          <div class="p-4 rounded-xl border border-cyber-cyan/15 bg-cyber-card/70 hover:border-cyber-cyan/50 hover:shadow-[0_0_20px_rgba(0,229,255,0.15)] transition-all">
+            <div class="w-8 h-8 rounded-lg bg-cyber-cyan/10 flex items-center justify-center text-cyber-cyan mb-3 border border-cyber-cyan/20">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+            </div>
+            <h3 class="font-display text-sm font-semibold tracking-wider text-white uppercase mb-1">Music</h3>
+            <p class="text-xs text-cyber-silver font-light">Curated multi-genre track selection</p>
+          </div>
+
+          <!-- Quality 2: Energy -->
+          <div class="p-4 rounded-xl border border-cyber-violet/20 bg-cyber-card/70 hover:border-cyber-violet/60 hover:shadow-[0_0_20px_rgba(122,44,255,0.18)] transition-all">
+            <div class="w-8 h-8 rounded-lg bg-cyber-violet/15 flex items-center justify-center text-cyber-violet mb-3 border border-cyber-violet/30">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-display text-sm font-semibold tracking-wider text-white uppercase mb-1">Energy</h3>
+            <p class="text-xs text-cyber-silver font-light">Intuitive crowd momentum pacing</p>
+          </div>
+
+          <!-- Quality 3: Atmosphere -->
+          <div class="p-4 rounded-xl border border-cyber-cyan/15 bg-cyber-card/70 hover:border-cyber-cyan/50 hover:shadow-[0_0_20px_rgba(0,229,255,0.15)] transition-all">
+            <div class="w-8 h-8 rounded-lg bg-cyber-cyan/10 flex items-center justify-center text-cyber-cyan mb-3 border border-cyber-cyan/20">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            </div>
+            <h3 class="font-display text-sm font-semibold tracking-wider text-white uppercase mb-1">Atmosphere</h3>
+            <p class="text-xs text-cyber-silver font-light">Elevated sensory event immersion</p>
+          </div>
+
+          <!-- Quality 4: Experience -->
+          <div class="p-4 rounded-xl border border-cyber-gold/20 bg-cyber-card/70 hover:border-cyber-gold/60 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all">
+            <div class="w-8 h-8 rounded-lg bg-cyber-gold/10 flex items-center justify-center text-cyber-gold mb-3 border border-cyber-gold/30">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+            </div>
+            <h3 class="font-display text-sm font-semibold tracking-wider text-white uppercase mb-1">Experience</h3>
+            <p class="text-xs text-cyber-silver font-light">Unrivaled prestige & reliability</p>
+          </div>
+
+        </div>
+
+        <!-- Section CTA Links -->
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="#booking" class="cyber-btn magnetic-btn px-7 py-3 rounded-full text-xs uppercase tracking-[0.18em]">
+            Schedule Booking Inquiry
+          </a>
+          <button onclick="openWhatsAppChat('Hello DJ LUFE, I would like to inquire about your availability.')" class="text-xs uppercase tracking-[0.18em] text-cyber-silver hover:text-cyber-cyan transition-colors flex items-center gap-2">
+            <span>Direct WhatsApp</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THE LUFE EXPERIENCE SECTION WITH 3D TILT INTERACTION -->
+  <section id="experience" class="relative py-28 lg:py-36 px-6 lg:px-12 bg-cyber-black">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-24 reveal-elem">
+        <span class="text-xs uppercase tracking-[0.35em] text-cyber-cyan font-medium mb-3 inline-block">Bespoke Audio Architecture</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white mb-6">
+          THE LUFE <span class="text-cyan-gradient">EXPERIENCE</span>
+        </h2>
+        <p class="font-body text-cyber-silver font-light text-sm sm:text-base leading-relaxed">
+          DJ LUFE delivers tailored musical programming across premier event formats, maintaining the equilibrium between elegance, intimacy, and raw energy.
+        </p>
+      </div>
+
+      <!-- 6 Futuristic Interface Cards Grid with 3D Tilt system -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 card-perspective">
+
+        <!-- Card 1: Private Events -->
+        <div class="interactive-tilt-card group p-8 rounded-2xl bg-cyber-card/85 border border-cyber-cyan/15 hover:border-cyber-cyan/60 transition-all duration-300 relative overflow-hidden flex flex-col justify-between hover:shadow-[0_15px_35px_rgba(0,229,255,0.15)] reveal-elem">
+          <div class="card-bg-light absolute -top-12 -right-12 w-40 h-40 bg-cyber-cyan/10 rounded-full blur-2xl pointer-events-none transition-transform duration-200"></div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-[11px] font-mono tracking-widest text-cyber-cyan">01 / PRIVATE</span>
+              <div class="w-10 h-10 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/20 flex items-center justify-center text-cyber-cyan group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-bold tracking-wider text-white uppercase mb-3 group-hover:text-cyber-cyan transition-colors">Private Events</h3>
+            <p class="text-sm text-cyber-silver font-light leading-relaxed mb-6">
+              "Curated music and atmosphere for memorable private celebrations."
+            </p>
+          </div>
+          <a href="#booking" class="text-xs uppercase tracking-[0.2em] text-cyber-silver group-hover:text-cyber-cyan flex items-center gap-2 pt-4 border-t border-white/5">
+            <span>Inquire Booking</span>
+            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 2: Weddings -->
+        <div class="interactive-tilt-card group p-8 rounded-2xl bg-cyber-card/85 border border-cyber-violet/20 hover:border-cyber-violet/70 transition-all duration-300 relative overflow-hidden flex flex-col justify-between hover:shadow-[0_15px_35px_rgba(122,44,255,0.18)] reveal-elem">
+          <div class="card-bg-light absolute -top-12 -right-12 w-40 h-40 bg-cyber-violet/10 rounded-full blur-2xl pointer-events-none transition-transform duration-200"></div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-[11px] font-mono tracking-widest text-cyber-violet">02 / CEREMONY</span>
+              <div class="w-10 h-10 rounded-full bg-cyber-violet/15 border border-cyber-violet/30 flex items-center justify-center text-cyber-violet group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-bold tracking-wider text-white uppercase mb-3 group-hover:text-cyber-violet transition-colors">Weddings</h3>
+            <p class="text-sm text-cyber-silver font-light leading-relaxed mb-6">
+              "Music and energy designed to complement every important moment."
+            </p>
+          </div>
+          <a href="#booking" class="text-xs uppercase tracking-[0.2em] text-cyber-silver group-hover:text-cyber-violet flex items-center gap-2 pt-4 border-t border-white/5">
+            <span>Inquire Booking</span>
+            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 3: Corporate Events -->
+        <div class="interactive-tilt-card group p-8 rounded-2xl bg-cyber-card/85 border border-cyber-cyan/15 hover:border-cyber-cyan/60 transition-all duration-300 relative overflow-hidden flex flex-col justify-between hover:shadow-[0_15px_35px_rgba(0,229,255,0.15)] reveal-elem">
+          <div class="card-bg-light absolute -top-12 -right-12 w-40 h-40 bg-cyber-cyan/10 rounded-full blur-2xl pointer-events-none transition-transform duration-200"></div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-[11px] font-mono tracking-widest text-cyber-cyan">03 / CORPORATE</span>
+              <div class="w-10 h-10 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/20 flex items-center justify-center text-cyber-cyan group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-bold tracking-wider text-white uppercase mb-3 group-hover:text-cyber-cyan transition-colors">Corporate Events</h3>
+            <p class="text-sm text-cyber-silver font-light leading-relaxed mb-6">
+              "Professional entertainment with an atmosphere tailored to the occasion."
+            </p>
+          </div>
+          <a href="#booking" class="text-xs uppercase tracking-[0.2em] text-cyber-silver group-hover:text-cyber-cyan flex items-center gap-2 pt-4 border-t border-white/5">
+            <span>Inquire Booking</span>
+            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 4: Parties -->
+        <div class="interactive-tilt-card group p-8 rounded-2xl bg-cyber-card/85 border border-cyber-magenta/20 hover:border-cyber-magenta/70 transition-all duration-300 relative overflow-hidden flex flex-col justify-between hover:shadow-[0_15px_35px_rgba(255,20,147,0.18)] reveal-elem">
+          <div class="card-bg-light absolute -top-12 -right-12 w-40 h-40 bg-cyber-magenta/10 rounded-full blur-2xl pointer-events-none transition-transform duration-200"></div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-[11px] font-mono tracking-widest text-cyber-magenta">04 / PARTIES</span>
+              <div class="w-10 h-10 rounded-full bg-cyber-magenta/15 border border-cyber-magenta/30 flex items-center justify-center text-cyber-magenta group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-bold tracking-wider text-white uppercase mb-3 group-hover:text-cyber-magenta transition-colors">Parties</h3>
+            <p class="text-sm text-cyber-silver font-light leading-relaxed mb-6">
+              "High-energy music designed to keep the room alive."
+            </p>
+          </div>
+          <a href="#booking" class="text-xs uppercase tracking-[0.2em] text-cyber-silver group-hover:text-cyber-magenta flex items-center gap-2 pt-4 border-t border-white/5">
+            <span>Inquire Booking</span>
+            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 5: Nightlife -->
+        <div class="interactive-tilt-card group p-8 rounded-2xl bg-cyber-card/85 border border-cyber-cyan/15 hover:border-cyber-cyan/60 transition-all duration-300 relative overflow-hidden flex flex-col justify-between hover:shadow-[0_15px_35px_rgba(0,229,255,0.15)] reveal-elem">
+          <div class="card-bg-light absolute -top-12 -right-12 w-40 h-40 bg-cyber-cyan/10 rounded-full blur-2xl pointer-events-none transition-transform duration-200"></div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-[11px] font-mono tracking-widest text-cyber-cyan">05 / NIGHTLIFE</span>
+              <div class="w-10 h-10 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/20 flex items-center justify-center text-cyber-cyan group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-bold tracking-wider text-white uppercase mb-3 group-hover:text-cyber-cyan transition-colors">Nightlife</h3>
+            <p class="text-sm text-cyber-silver font-light leading-relaxed mb-6">
+              "Dynamic DJ performance for an immersive nightlife atmosphere."
+            </p>
+          </div>
+          <a href="#booking" class="text-xs uppercase tracking-[0.2em] text-cyber-silver group-hover:text-cyber-cyan flex items-center gap-2 pt-4 border-t border-white/5">
+            <span>Inquire Booking</span>
+            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 6: Special Events -->
+        <div class="interactive-tilt-card group p-8 rounded-2xl bg-cyber-card/85 border border-cyber-gold/25 hover:border-cyber-gold/70 transition-all duration-300 relative overflow-hidden flex flex-col justify-between hover:shadow-[0_15px_35px_rgba(212,175,55,0.18)] reveal-elem">
+          <div class="card-bg-light absolute -top-12 -right-12 w-40 h-40 bg-cyber-gold/10 rounded-full blur-2xl pointer-events-none transition-transform duration-200"></div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-[11px] font-mono tracking-widest text-cyber-gold">06 / BESPOKE</span>
+              <div class="w-10 h-10 rounded-full bg-cyber-gold/10 border border-cyber-gold/30 flex items-center justify-center text-cyber-gold group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+              </div>
+            </div>
+            <h3 class="font-display text-xl font-bold tracking-wider text-white uppercase mb-3 group-hover:text-cyber-gold transition-colors">Special Events</h3>
+            <p class="text-sm text-cyber-silver font-light leading-relaxed mb-6">
+              "Flexible musical direction for unique events and celebrations."
+            </p>
+          </div>
+          <a href="#booking" class="text-xs uppercase tracking-[0.2em] text-cyber-silver group-hover:text-cyber-gold flex items-center gap-2 pt-4 border-t border-white/5">
+            <span>Inquire Booking</span>
+            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE DJ CONSOLE VISUAL (Clickable Jog-Wheel with Particle Emission) -->
+  <section class="py-20 bg-cyber-deep border-y border-cyber-cyan/15 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 reveal-elem">
+      
+      <div class="rounded-3xl border border-cyber-cyan/30 p-8 lg:p-12 bg-gradient-to-b from-[#0D1022] to-cyber-black shadow-[0_20px_50px_rgba(0,0,0,0.85)] relative">
+        
+        <!-- Top Subtle Gold Trim Accent -->
+        <div class="absolute top-0 left-1/4 right-1/4 h-[1.5px] bg-gradient-to-r from-transparent via-cyber-gold to-transparent"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          <!-- Tactile Vinyl Deck / Jog Wheel Visual (Clickable) -->
+          <div class="md:col-span-5 flex justify-center">
+            <div class="relative w-56 h-56 sm:w-64 sm:h-64 flex items-center justify-center select-none cursor-pointer group" id="jog-wheel-container">
+              
+              <!-- Outer Electric Cyan Glowing Ring -->
+              <div id="deck-ring-glow" class="absolute inset-0 rounded-full border-2 border-cyber-cyan/40 shadow-[0_0_35px_rgba(0,229,255,0.25)] bg-gradient-to-tr from-black via-[#0a0f1d] to-[#121c38] transition-all duration-300"></div>
+              
+              <!-- Rotating Grooved Disc -->
+              <div id="vinyl-disc" class="absolute inset-3 rounded-full spin-slow bg-[radial-gradient(circle,_#0f172a_15%,_#050811_45%,_#1e293b_65%,_#020408_100%)] border border-cyber-cyan/20 flex items-center justify-center shadow-inner">
+                <!-- Grooves -->
+                <div class="absolute inset-6 rounded-full border border-cyber-cyan/10"></div>
+                <div class="absolute inset-10 rounded-full border border-cyber-violet/10"></div>
+                <div class="absolute inset-16 rounded-full border border-white/5"></div>
+                
+                <!-- Center DJ LUFE Label (Actual Mini Logo Image) -->
+                <div class="w-16 h-16 rounded-full overflow-hidden border border-cyber-cyan/50 shadow-[0_0_15px_rgba(0,229,255,0.5)]">
+                  <img src="https://cdn.phototourl.com/member/2026-10-02-9eba31a8-1a74-4839-9d4e-e5a5918b8d67.jpg" alt="Deck Center Monogram" class="w-full h-full object-cover">
+                </div>
+              </div>
+
+              <!-- Futuristic Stylus / Jog Positioner Marker -->
+              <div class="absolute top-2 right-2 w-12 h-16 pointer-events-none opacity-80">
+                <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50 5 L25 45 L20 65" stroke="url(#chromeArm)" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="50" cy="5" r="4" fill="#00E5FF"/>
+                  <rect x="15" y="62" width="10" height="12" rx="2" fill="#EAF6FF"/>
+                  <defs>
+                    <linearGradient id="chromeArm" x1="0" y1="0" x2="60" y2="80">
+                      <stop offset="0%" stop-color="#00E5FF"/>
+                      <stop offset="100%" stop-color="#7A2CFF"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Console Status & Controls -->
+          <div class="md:col-span-7 flex flex-col justify-center">
+            
+            <div class="flex items-center gap-2 mb-3">
+              <span id="deck-status-dot" class="w-2.5 h-2.5 rounded-full bg-cyber-cyan animate-ping"></span>
+              <span class="text-[11px] font-mono uppercase tracking-[0.25em] text-cyber-cyan">Sonic Console &bull; Live Session</span>
+            </div>
+            
+            <h3 class="font-display text-2xl sm:text-3xl font-bold tracking-wide text-white mb-2">
+              PRECISION AUDIO ARCHITECTURE
+            </h3>
+            
+            <p class="text-sm text-cyber-silver font-light leading-relaxed mb-6">
+              Interactive tactile motion module. Tap the turntable to pause or resume disc rotation and witness the dynamic responsive frequency meter.
+            </p>
+
+            <!-- Console Status Monitor Panel -->
+            <div class="p-4 rounded-xl bg-black/60 border border-cyber-cyan/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-cyber-silver font-mono">BPM Display</p>
+                <div class="flex items-baseline gap-2">
+                  <span id="bpm-display" class="font-mono text-2xl font-bold text-cyber-chrome">128.0</span>
+                  <span class="text-xs text-cyber-cyan font-mono">BPM</span>
+                </div>
+              </div>
+
+              <!-- Animated Equalizer Spectrum Bars -->
+              <div class="flex items-end gap-1.5 h-10 px-2" id="deck-eq-bars">
+                <span class="w-1.5 bg-cyber-cyan rounded-t-sm h-4"></span>
+                <span class="w-1.5 bg-cyber-violet rounded-t-sm h-7"></span>
+                <span class="w-1.5 bg-cyber-cyan rounded-t-sm h-9"></span>
+                <span class="w-1.5 bg-cyber-magenta rounded-t-sm h-6"></span>
+                <span class="w-1.5 bg-cyber-cyan rounded-t-sm h-8"></span>
+                <span class="w-1.5 bg-cyber-gold rounded-t-sm h-5"></span>
+                <span class="w-1.5 bg-cyber-cyan rounded-t-sm h-10"></span>
+                <span class="w-1.5 bg-cyber-violet rounded-t-sm h-4"></span>
+              </div>
+
+              <button id="toggle-turntable-btn" class="px-4 py-2 rounded-lg border border-cyber-cyan/40 text-xs font-mono tracking-wider text-cyber-cyan hover:bg-cyber-cyan hover:text-black transition-colors">
+                PAUSE ROTATION
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY SECTION (Optimized Per-Image Crops: Preserving Faces & Upper Body) -->
+  <section id="gallery" class="py-28 lg:py-36 px-6 lg:px-12 bg-cyber-black relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal-elem">
+        <div>
+          <span class="text-xs uppercase tracking-[0.35em] text-cyber-cyan font-medium mb-3 block">Visual Portfolio</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            THE GALLERY <span class="text-cyan-gradient">— LUFE IN MOTION</span>
+          </h2>
+        </div>
+        <p class="text-xs uppercase tracking-[0.2em] text-cyber-silver max-w-xs font-light">
+          Click any capture to reveal fullscreen high-fidelity gallery lightbox.
+        </p>
+      </div>
+
+      <!-- Asymmetrical Editorial Showcase (Intelligent Focal Preservation) -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+        
+        <!-- Gallery Item 1: DJ LUFE Photo 01 (Stage Performance) -->
+        <div class="gallery-card md:col-span-7 group relative rounded-2xl overflow-hidden cursor-pointer border border-cyber-cyan/20 hover:border-cyber-cyan/70 transition-all duration-500 aspect-[16/10] reveal-elem" onclick="openLightbox(0)">
+          <img 
+            id="gal-img-0"
+            src="https://cdn.phototourl.com/member/2026-10-02-347ef468-8653-4b14-a709-7b5d89f7fee7.jpg" 
+            alt="DJ LUFE Mainstage Session" 
+            class="photo-smart w-full h-full brightness-90 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700 ease-out"
+            loading="lazy"
+          />
+          <div class="card-cursor-glow absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-cyber-black/90 via-cyber-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+          <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-mono tracking-widest text-cyber-cyan uppercase">Photo 01 &bull; Stage</span>
+              <h3 class="font-display text-lg font-bold text-white tracking-wider">DJ LUFE — LIVE PERFORMANCE</h3>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-cyber-cyan/30 flex items-center justify-center text-white group-hover:border-cyber-cyan group-hover:text-cyber-cyan transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 2: DJ LUFE Photo 02 (Editorial Portrait: Preserving Face & Head) -->
+        <div class="gallery-card md:col-span-5 group relative rounded-2xl overflow-hidden cursor-pointer border border-cyber-violet/25 hover:border-cyber-violet/80 transition-all duration-500 aspect-[4/5] md:aspect-auto reveal-elem" onclick="openLightbox(1)">
+          <img 
+            id="gal-img-1"
+            src="https://cdn.phototourl.com/member/2026-10-02-38ad6edc-6ee1-46d3-a750-a425a25b33f6.jpg" 
+            alt="DJ LUFE Studio Portrait" 
+            class="photo-smart w-full h-full brightness-90 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700 ease-out"
+            loading="lazy"
+          />
+          <div class="card-cursor-glow absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-cyber-black/90 via-cyber-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+          <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-mono tracking-widest text-cyber-violet uppercase">Photo 02 &bull; Studio</span>
+              <h3 class="font-display text-lg font-bold text-white tracking-wider">EDITORIAL PORTRAIT</h3>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-cyber-violet/30 flex items-center justify-center text-white group-hover:border-cyber-violet group-hover:text-cyber-violet transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 3: DJ LUFE Photo 03 (Immersion & Crowd) -->
+        <div class="gallery-card md:col-span-5 group relative rounded-2xl overflow-hidden cursor-pointer border border-cyber-cyan/20 hover:border-cyber-cyan/70 transition-all duration-500 aspect-[4/5] md:aspect-auto reveal-elem" onclick="openLightbox(2)">
+          <img 
+            id="gal-img-2"
+            src="https://cdn.phototourl.com/member/2026-10-02-c4b7c7ba-8cf1-41c6-950c-fbb9f13328e9.jpg" 
+            alt="DJ LUFE Atmosphere & Crowd" 
+            class="photo-smart w-full h-full brightness-90 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700 ease-out"
+            loading="lazy"
+          />
+          <div class="card-cursor-glow absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-cyber-black/90 via-cyber-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+          <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-mono tracking-widest text-cyber-cyan uppercase">Photo 03 &bull; Immersion</span>
+              <h3 class="font-display text-lg font-bold text-white tracking-wider">ATMOSPHERE & LIGHT</h3>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-cyber-cyan/30 flex items-center justify-center text-white group-hover:border-cyber-cyan group-hover:text-cyber-cyan transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 4: DJ LUFE Photo 04 (Console Session & Turntables) -->
+        <div class="gallery-card md:col-span-7 group relative rounded-2xl overflow-hidden cursor-pointer border border-cyber-gold/25 hover:border-cyber-gold/75 transition-all duration-500 aspect-[16/10] reveal-elem" onclick="openLightbox(3)">
+          <img 
+            id="gal-img-3"
+            src="https://cdn.phototourl.com/member/2026-10-02-86ec3087-fbe8-4e05-8b71-fbdee66ba7ae.jpg" 
+            alt="DJ LUFE Mixing Session Close-up" 
+            class="photo-smart w-full h-full brightness-90 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700 ease-out"
+            loading="lazy"
+          />
+          <div class="card-cursor-glow absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-cyber-black/90 via-cyber-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+          <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-mono tracking-widest text-cyber-gold uppercase">Photo 04 &bull; Sonic Craft</span>
+              <h3 class="font-display text-lg font-bold text-white tracking-wider">CONSOLE PRECISION</h3>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-cyber-gold/30 flex items-center justify-center text-white group-hover:border-cyber-gold group-hover:text-cyber-gold transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FULLSCREEN LIGHTBOX MODAL (CONTAIN MODE: ZERO CROPPING) -->
+  <div id="lightbox-modal" class="fixed inset-0 z-[500] bg-black/95 backdrop-blur-2xl flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+    
+    <!-- Close Button -->
+    <button onclick="closeLightbox()" aria-label="Close Lightbox" class="absolute top-6 right-6 w-12 h-12 rounded-full border border-cyber-cyan/30 text-white hover:text-cyber-cyan hover:border-cyber-cyan flex items-center justify-center transition-colors z-50">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+
+    <!-- Prev Button -->
+    <button onclick="prevLightbox()" aria-label="Previous Image" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 border border-cyber-cyan/30 text-white hover:text-cyber-cyan hover:border-cyber-cyan flex items-center justify-center transition-colors z-50">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+
+    <!-- Next Button -->
+    <button onclick="nextLightbox()" aria-label="Next Image" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 border border-cyber-cyan/30 text-white hover:text-cyber-cyan hover:border-cyber-cyan flex items-center justify-center transition-colors z-50">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+    <!-- Lightbox Main Image & Caption (object-fit: contain to show 100% of the photograph) -->
+    <div class="max-w-[92vw] max-h-[86vh] flex flex-col items-center">
+      <div class="relative rounded-2xl overflow-hidden border border-cyber-cyan/40 shadow-[0_0_50px_rgba(0,229,255,0.25)] flex items-center justify-center bg-black/80 p-1">
+        <img id="lightbox-img" src="" alt="DJ LUFE Fullscreen Preview" style="max-height: 76vh; max-width: 90vw; object-fit: contain;" class="transition-transform duration-300">
+      </div>
+      <div class="mt-4 text-center">
+        <p id="lightbox-counter" class="text-xs font-mono uppercase tracking-[0.25em] text-cyber-cyan mb-1">1 / 4</p>
+        <h4 id="lightbox-title" class="font-display text-lg text-white font-semibold tracking-wider">DJ LUFE — LIVE PERFORMANCE</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- CINEMATIC VISUAL BREAK SECTION -->
+  <section class="relative min-h-[60vh] lg:min-h-[70vh] flex items-center justify-center overflow-hidden reveal-neon-line">
+    <!-- Background: DJ LUFE Photo 03 with Head-Safe Protection -->
+    <div class="absolute inset-0 z-0 overflow-hidden head-safe-frame">
+      <img 
+        id="break-bg-img"
+        src="https://cdn.phototourl.com/member/2026-10-02-c4b7c7ba-8cf1-41c6-950c-fbb9f13328e9.jpg" 
+        alt="DJ LUFE Arena Atmosphere" 
+        class="photo-smart w-full h-full filter brightness-[0.32] contrast-125"
+      />
+      <!-- Dramatic Dark Sequence Overlays -->
+      <div class="absolute inset-0 bg-gradient-to-t from-cyber-black via-cyber-black/60 to-cyber-black"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-cyber-black via-transparent to-cyber-black"></div>
+      
+      <!-- Cyan scanline and violet light sweep -->
+      <div class="absolute inset-0 scanline-bg opacity-30 pointer-events-none"></div>
+      <div class="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-cyber-violet/15 to-transparent skew-x-12 animate-holo-sweep pointer-events-none"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center reveal-elem">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="w-8 h-[1px] bg-cyber-gold"></span>
+        <span class="text-xs uppercase tracking-[0.4em] text-cyber-gold font-medium">Unrivaled Nightlife</span>
+        <span class="w-8 h-[1px] bg-cyber-gold"></span>
+      </div>
+      
+      <h2 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-4 uppercase">
+        TURN UP<br>
+        <span class="text-violet-cyan">THE MOMENT.</span>
+      </h2>
+
+      <p class="font-display text-sm sm:text-lg tracking-[0.3em] uppercase text-cyber-silver font-light mb-10">
+        MUSIC. &bull; ENERGY. &bull; ATMOSPHERE.
+      </p>
+
+      <a href="#booking" class="cyber-btn magnetic-btn inline-flex items-center gap-3 px-10 py-4 rounded-full text-xs uppercase tracking-[0.2em]">
+        <span>Make Your Event Unforgettable</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- BOOKING SECTION -->
+  <section id="booking" class="py-28 lg:py-36 px-6 lg:px-12 bg-cyber-deep relative">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20 reveal-elem">
+        <span class="text-xs uppercase tracking-[0.35em] text-cyber-cyan font-medium mb-3 inline-block">Direct Booking Inquiries</span>
+        <h2 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 uppercase">
+          READY TO MAKE<br>
+          <span class="text-cyan-gradient">YOUR EVENT UNFORGETTABLE?</span>
+        </h2>
+        <p class="font-body text-cyber-silver font-light text-base sm:text-lg leading-relaxed">
+          Tell us about your event and connect directly with DJ LUFE. Every inquiry is handled directly for tailored scheduling and technical requirements.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left: Quick Direct Booking & WhatsApp Badge -->
+        <div class="lg:col-span-5 flex flex-col gap-6 reveal-elem">
+          
+          <div class="p-8 rounded-2xl bg-cyber-card border border-cyber-cyan/30 shadow-[0_10px_35px_rgba(0,0,0,0.6)]">
+            
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl overflow-hidden border border-cyber-cyan/40">
+                <img src="https://cdn.phototourl.com/member/2026-10-02-9eba31a8-1a74-4839-9d4e-e5a5918b8d67.jpg" alt="DJ LUFE Direct Badge" class="w-full h-full object-cover">
+              </div>
+              <div>
+                <h3 class="font-display text-lg font-bold tracking-wider text-white uppercase">Direct WhatsApp Hotline</h3>
+                <p class="text-[10px] font-mono text-cyber-cyan uppercase tracking-widest">Instant Management Sync</p>
+              </div>
+            </div>
+
+            <p class="text-sm text-cyber-silver font-light leading-relaxed mb-6">
+              Need immediate confirmation or discussing a date directly? Contact the DJ LUFE official management number directly on WhatsApp.
+            </p>
+
+            <!-- Premium Cyber WhatsApp Button -->
+            <button onclick="openWhatsAppChat('Hello DJ LUFE, I would like to inquire about booking DJ LUFE for my event.')" class="w-full py-4 px-6 rounded-xl bg-black border border-cyber-cyan text-white hover:text-cyber-cyan flex items-center justify-center gap-3 transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,229,255,0.35)] group mb-4">
+              <!-- WhatsApp Vector Icon -->
+              <svg class="w-5 h-5 text-cyber-cyan group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span class="text-xs uppercase tracking-[0.2em] font-bold">Chat With DJ LUFE</span>
+            </button>
+
+            <div class="flex items-center justify-between text-xs text-cyber-silver font-mono pt-3 border-t border-white/10">
+              <span>WHATSAPP NUMBER:</span>
+              <span class="text-white font-semibold">+62 818-0945-7898</span>
+            </div>
+          </div>
+
+          <!-- Direct Inquiries Assurance -->
+          <div class="p-6 rounded-2xl bg-cyber-black/70 border border-cyber-cyan/15 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/25 flex-shrink-0 flex items-center justify-center text-cyber-cyan">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-display text-sm font-semibold tracking-wide text-white uppercase mb-1">Direct Communication</h4>
+              <p class="text-xs text-cyber-silver font-light leading-relaxed">
+                Submissions automatically construct a structured WhatsApp message directly to DJ LUFE without third-party delay or loss.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Structured Booking Inquiry Form -->
+        <div class="lg:col-span-7 reveal-elem">
+          <form id="booking-inquiry-form" onsubmit="handleBookingSubmit(event)" class="p-8 sm:p-10 rounded-2xl bg-cyber-card border border-cyber-cyan/20 shadow-2xl relative">
+            
+            <h3 class="font-display text-xl font-bold tracking-wider text-white uppercase mb-6 flex items-center justify-between">
+              <span>Event Inquiry Details</span>
+              <span class="text-xs font-mono font-normal text-cyber-cyan tracking-widest">DIRECT SYNC</span>
+            </h3>
+
+            <!-- Feedback Notification Banner -->
+            <div id="form-feedback" class="hidden mb-6 p-4 rounded-xl text-xs font-mono tracking-wider transition-all"></div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+              
+              <!-- Name -->
+              <div>
+                <label for="form-name" class="block text-xs uppercase tracking-widest text-cyber-silver font-medium mb-2">
+                  Full Name <span class="text-cyber-cyan">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="form-name" 
+                  required 
+                  placeholder="e.g. Alexander Vance" 
+                  class="w-full px-4 py-3.5 rounded-xl bg-cyber-black border border-white/15 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyber-cyan transition-colors"
+                />
+              </div>
+
+              <!-- Phone / WhatsApp -->
+              <div>
+                <label for="form-phone" class="block text-xs uppercase tracking-widest text-cyber-silver font-medium mb-2">
+                  Phone / WhatsApp <span class="text-cyber-cyan">*</span>
+                </label>
+                <input 
+                  type="tel" 
+                  id="form-phone" 
+                  required 
+                  placeholder="e.g. +62 812-XXXX-XXXX" 
+                  class="w-full px-4 py-3.5 rounded-xl bg-cyber-black border border-white/15 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyber-cyan transition-colors"
+                />
+              </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+              
+              <!-- Event Type Selection -->
+              <div>
+                <label for="form-type" class="block text-xs uppercase tracking-widest text-cyber-silver font-medium mb-2">
+                  Event Category <span class="text-cyber-cyan">*</span>
+                </label>
+                <select 
+                  id="form-type" 
+                  required 
+                  class="w-full px-4 py-3.5 rounded-xl bg-cyber-black border border-white/15 text-white text-sm focus:outline-none focus:border-cyber-cyan transition-colors"
+                >
+                  <option value="" disabled selected>Select Event Category</option>
+                  <option value="Private Event">Private Event</option>
+                  <option value="Wedding Celebration">Wedding Celebration</option>
+                  <option value="Corporate Event">Corporate Event</option>
+                  <option value="Party / Celebration">Party / Celebration</option>
+                  <option value="Nightlife / Club Venue">Nightlife / Club Venue</option>
+                  <option value="Special Bespoke Event">Special Bespoke Event</option>
+                </select>
+              </div>
+
+              <!-- Event Date -->
+              <div>
+                <label for="form-date" class="block text-xs uppercase tracking-widest text-cyber-silver font-medium mb-2">
+                  Event Date <span class="text-cyber-cyan">*</span>
+                </label>
+                <input 
+                  type="date" 
+                  id="form-date" 
+                  required 
+                  class="w-full px-4 py-3.5 rounded-xl bg-cyber-black border border-white/15 text-white text-sm focus:outline-none focus:border-cyber-cyan transition-colors"
+                />
+              </div>
+
+            </div>
+
+            <!-- Event Location -->
+            <div class="mb-5">
+              <label for="form-location" class="block text-xs uppercase tracking-widest text-cyber-silver font-medium mb-2">
+                Event Venue & City <span class="text-cyber-cyan">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="form-location" 
+                required 
+                placeholder="e.g. W Bali Resort, Seminyak / Grand Ballroom Jakarta" 
+                class="w-full px-4 py-3.5 rounded-xl bg-cyber-black border border-white/15 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyber-cyan transition-colors"
+              />
+            </div>
+
+            <!-- Additional Message -->
+            <div class="mb-8">
+              <label for="form-message" class="block text-xs uppercase tracking-widest text-cyber-silver font-medium mb-2">
+                Additional Notes / Vibe Specifications
+              </label>
+              <textarea 
+                id="form-message" 
+                rows="3" 
+                placeholder="Share musical genres, estimated audience count, or technical requirements..." 
+                class="w-full px-4 py-3.5 rounded-xl bg-cyber-black border border-white/15 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyber-cyan transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              class="w-full cyber-btn py-4 rounded-xl text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3 shadow-lg"
+            >
+              <span>Send Booking Inquiry</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+
+            <p class="text-[11px] text-cyber-silver text-center mt-4 font-light">
+              Pressing Send will launch WhatsApp directly with your formatted booking parameters.
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black border-t border-cyber-cyan/15 pt-20 pb-12 px-6 lg:px-12 text-cyber-silver text-sm">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-16 border-b border-white/10 gap-8">
+        
+        <!-- Footer Brand Monogram (Actual Logo Image) -->
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl overflow-hidden border border-cyber-cyan/30 shadow-[0_0_15px_rgba(0,229,255,0.25)]">
+            <img 
+              src="https://cdn.phototourl.com/member/2026-10-02-9eba31a8-1a74-4839-9d4e-e5a5918b8d67.jpg" 
+              alt="DJ LUFE Footer Logo" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <span class="font-display text-2xl font-bold tracking-[0.2em] text-white block">DJ LUFE</span>
+            <span class="text-[10px] uppercase tracking-[0.3em] text-cyber-cyan">The Sound. The Energy. The Experience.</span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap gap-6 text-xs uppercase tracking-[0.2em] font-medium text-cyber-chrome">
+          <a href="#home" class="hover:text-cyber-cyan transition-colors">Home</a>
+          <a href="#about" class="hover:text-cyber-cyan transition-colors">About</a>
+          <a href="#experience" class="hover:text-cyber-cyan transition-colors">Experience</a>
+          <a href="#gallery" class="hover:text-cyber-cyan transition-colors">Gallery</a>
+          <a href="#booking" class="hover:text-cyber-cyan transition-colors">Booking</a>
+        </div>
+
+        <!-- Direct WhatsApp Action -->
+        <div class="flex items-center gap-4">
+          <button onclick="openWhatsAppChat('Hello DJ LUFE, I would like to inquire about booking.')" class="px-5 py-2.5 rounded-full border border-cyber-cyan text-xs uppercase tracking-[0.18em] text-cyber-cyan hover:bg-cyber-cyan hover:text-black transition-all">
+            WhatsApp Hotline
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Credo -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-cyber-silver gap-4 font-light">
+        <p>&copy; 2026 DJ LUFE. All Rights Reserved.</p>
+        <p class="tracking-wider">Cyberpunk Luxury Sound &bull; Event Entertainment &bull; Worldwide Booking</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BOOKING BUTTON -->
+  <div id="floating-booking" class="fixed bottom-6 right-6 z-40 transition-all duration-300">
+    <button 
+      onclick="openWhatsAppChat()" 
+      class="cyber-btn flex items-center gap-3 px-5 py-3.5 sm:px-6 sm:py-4 rounded-full shadow-[0_10px_35px_rgba(0,229,255,0.4)] text-xs uppercase tracking-[0.2em] group cursor-pointer"
+      aria-label="Direct WhatsApp Booking"
+    >
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-black"></span>
+      </span>
+      <span class="hidden sm:inline">Book DJ LUFE</span>
+      <span class="sm:hidden font-bold">Book</span>
+      <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+    </button>
+  </div>
+
+  <script>
+    /**
+     * ============================================================
+     * DJ LUFE OFFICIAL BRAND ASSET CONFIGURATION (STRICT SINGLE SOURCE)
+     * ============================================================
+     */
+    const DJ_LUFE_ASSETS = {
+      logo: "https://cdn.phototourl.com/member/2026-10-02-9eba31a8-1a74-4839-9d4e-e5a5918b8d67.jpg",
+      photo1: "https://cdn.phototourl.com/member/2026-10-02-347ef468-8653-4b14-a709-7b5d89f7fee7.jpg",
+      photo2: "https://cdn.phototourl.com/member/2026-10-02-38ad6edc-6ee1-46d3-a750-a425a25b33f6.jpg",
+      photo3: "https://cdn.phototourl.com/member/2026-10-02-c4b7c7ba-8cf1-41c6-950c-fbb9f13328e9.jpg",
+      photo4: "https://cdn.phototourl.com/member/2026-10-02-86ec3087-fbe8-4e05-8b71-fbdee66ba7ae.jpg"
+    };
+
+    /**
+     * ABSOLUTE SUBJECT-SAFE PHOTO FRAMING CONFIGURATION (DJ_LUFE_SAFE_FRAMING):
+     * Guarantees DJ LUFE's head, face, forehead, and hair NEVER touch the boundary
+     * or get cut off across any viewport (320px to 1920px).
+     */
+    const DJ_LUFE_SAFE_FRAMING = {
+      photo1: { // Hero Stage Performance (Photo 01)
+        desktop: { position: "50% 18%", scale: 1.0,  origin: "50% 12%", safeTop: "0px" },
+        tablet:  { position: "50% 15%", scale: 0.98, origin: "50% 10%", safeTop: "4px" },
+        mobile:  { position: "50% 10%", scale: 0.96, origin: "50% 8%",  safeTop: "8px" }
+      },
+      photo2: { // About Studio Portrait (Photo 02 - Pure Face & Head Protection)
+        desktop: { position: "50% 8%",  scale: 0.98, origin: "50% 5%",  safeTop: "6px" },
+        tablet:  { position: "50% 6%",  scale: 0.96, origin: "50% 4%",  safeTop: "8px" },
+        mobile:  { position: "50% 4%",  scale: 0.94, origin: "50% 3%",  safeTop: "10px" }
+      },
+      photo3: { // Arena Atmosphere & Visual Break (Photo 03)
+        desktop: { position: "50% 20%", scale: 1.0,  origin: "50% 15%", safeTop: "0px" },
+        tablet:  { position: "50% 16%", scale: 0.98, origin: "50% 12%", safeTop: "4px" },
+        mobile:  { position: "50% 12%", scale: 0.96, origin: "50% 10%", safeTop: "8px" }
+      },
+      photo4: { // Console Turntable Precision (Photo 04)
+        desktop: { position: "50% 32%", scale: 1.0,  origin: "50% 25%", safeTop: "0px" },
+        tablet:  { position: "50% 28%", scale: 0.98, origin: "50% 20%", safeTop: "4px" },
+        mobile:  { position: "50% 24%", scale: 0.96, origin: "50% 18%", safeTop: "6px" }
+      }
+    };
+
+    const WHATSAPP_NUMBER = "6281809457898";
+
+    // Strict gallery dataset referencing the official 4 photographs
+    const GALLERY_DATA = [
+      {
+        url: DJ_LUFE_ASSETS.photo1,
+        title: "DJ LUFE — LIVE PERFORMANCE",
+        category: "STAGE 01"
+      },
+      {
+        url: DJ_LUFE_ASSETS.photo2,
+        title: "EDITORIAL PORTRAIT",
+        category: "STUDIO 02"
+      },
+      {
+        url: DJ_LUFE_ASSETS.photo3,
+        title: "ATMOSPHERE & LIGHT",
+        category: "IMMERSION 03"
+      },
+      {
+        url: DJ_LUFE_ASSETS.photo4,
+        title: "CONSOLE PRECISION",
+        category: "SONIC CRAFT 04"
+      }
+    ];
+
+    let currentLightboxIdx = 0;
+
+    /**
+     * Smart Subject-Safe Crop Applicator:
+     * Evaluates viewport width and maps the precise non-clipping focal coordinate.
+     */
+    function applySmartFocalFit() {
+      const width = window.innerWidth;
+      let tier = 'desktop';
+      if (width < 640) {
+        tier = 'mobile';
+      } else if (width <= 1024) {
+        tier = 'tablet';
+      }
+
+      function applyToEl(element, config) {
+        if (!element || !config) return;
+        element.style.setProperty('--img-pos', config.position);
+        element.style.setProperty('--img-scale', config.scale);
+        element.style.setProperty('--img-origin', config.origin || '50% 12%');
+        element.style.setProperty('--img-safe-top', config.safeTop || '0px');
+      }
+
+      // 1. Hero background (Photo 1)
+      applyToEl(document.getElementById('hero-bg-img'), DJ_LUFE_SAFE_FRAMING.photo1[tier]);
+
+      // 2. About portrait (Photo 2 - strictly face/head safe)
+      applyToEl(document.getElementById('about-portrait-img'), DJ_LUFE_SAFE_FRAMING.photo2[tier]);
+
+      // 3. Cinematic visual break (Photo 3)
+      applyToEl(document.getElementById('break-bg-img'), DJ_LUFE_SAFE_FRAMING.photo3[tier]);
+
+      // 4. Gallery cards (Photo 1 through 4)
+      applyToEl(document.getElementById('gal-img-0'), DJ_LUFE_SAFE_FRAMING.photo1[tier]);
+      applyToEl(document.getElementById('gal-img-1'), DJ_LUFE_SAFE_FRAMING.photo2[tier]);
+      applyToEl(document.getElementById('gal-img-2'), DJ_LUFE_SAFE_FRAMING.photo3[tier]);
+      applyToEl(document.getElementById('gal-img-3'), DJ_LUFE_SAFE_FRAMING.photo4[tier]);
+    }
+
+    /**
+     * Asset Safety & Integrity Validator
+     */
+    function validateAssets() {
+      const allImages = document.querySelectorAll('img');
+      allImages.forEach(img => {
+        img.addEventListener('error', () => {
+          img.style.backgroundColor = '#090B14';
+          img.style.objectFit = 'contain';
+          img.alt = 'DJ LUFE IMAGE';
+        });
+      });
+    }
+
+    /**
+     * Hero Startup Choreography Execution (0.0s - 1.5s)
+     */
+    function executeHeroStartup() {
+      const scan = document.getElementById('hero-startup-scan');
+      const logo = document.getElementById('hero-logo-box');
+      const title = document.getElementById('hero-main-title');
+      const tagline = document.getElementById('hero-tagline');
+      const desc = document.getElementById('hero-desc');
+      const ctas = document.getElementById('hero-cta-box');
+
+      // 0.15s: Thin scanning laser sweep
+      setTimeout(() => {
+        if (scan) {
+          scan.style.opacity = '1';
+          scan.animate([
+            { transform: 'translateY(0vh)', opacity: 1 },
+            { transform: 'translateY(85vh)', opacity: 0.9 },
+            { transform: 'translateY(100vh)', opacity: 0 }
+          ], { duration: 900, easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)' }).onfinish = () => {
+            scan.style.opacity = '0';
+          };
+        }
+      }, 150);
+
+      // 0.35s: Logo glow and bloom
+      setTimeout(() => {
+        if (logo) {
+          logo.classList.remove('opacity-0', 'scale-95');
+          logo.classList.add('opacity-100', 'scale-100');
+        }
+      }, 350);
+
+      // 0.65s: Headline snaps into focus
+      setTimeout(() => {
+        if (title) {
+          title.classList.remove('opacity-0', '-translate-y-4');
+          title.classList.add('opacity-100', 'translate-y-0');
+        }
+      }, 650);
+
+      // 0.95s: Tagline reveal
+      setTimeout(() => {
+        if (tagline) tagline.classList.remove('opacity-0');
+      }, 950);
+
+      // 1.15s: Description reveal
+      setTimeout(() => {
+        if (desc) desc.classList.remove('opacity-0');
+      }, 1150);
+
+      // 1.35s: CTA buttons activate with small neon pulse
+      setTimeout(() => {
+        if (ctas) {
+          ctas.classList.remove('opacity-0');
+          ctas.animate([
+            { filter: 'brightness(1.4) drop-shadow(0 0 15px #00E5FF)' },
+            { filter: 'brightness(1) drop-shadow(0 0 0 transparent)' }
+          ], { duration: 600, easing: 'ease-out' });
+        }
+      }, 1350);
+    }
+
+    /**
+     * Preloader Lifecycle (~1.2 seconds) with Hero Sequence Hand-off
+     */
+    window.addEventListener('load', () => {
+      validateAssets();
+      applySmartFocalFit();
+
+      const preloader = document.getElementById('preloader');
+      const logoWrap = document.getElementById('preloader-logo-wrap');
+      const line = document.getElementById('preloader-line');
+
+      setTimeout(() => {
+        if (logoWrap) {
+          logoWrap.classList.remove('opacity-0', 'scale-95');
+          logoWrap.classList.add('opacity-100', 'scale-100');
+        }
+      }, 100);
+
+      setTimeout(() => {
+        if (line) {
+          line.classList.remove('-translate-x-full');
+          line.classList.add('translate-x-0');
+        }
+      }, 450);
+
+      setTimeout(() => {
+        if (preloader) {
+          preloader.classList.add('opacity-0');
+          setTimeout(() => {
+            preloader.style.display = 'none';
+            executeHeroStartup();
+          }, 450);
+        }
+      }, 1100);
+    });
+
+    window.addEventListener('resize', applySmartFocalFit);
+
+    /**
+     * Scroll Progress, Active Nav Highlighting & Single-Shot Energy Pulse
+     */
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      
+      const progressBar = document.getElementById('scroll-progress');
+      if (progressBar) progressBar.style.width = scrolled + '%';
+
+      const header = document.getElementById('site-header');
+      if (winScroll > 50) {
+        header.classList.add('bg-[#050508]/92', 'backdrop-blur-md', 'border-b', 'border-cyber-cyan/20');
+        header.classList.remove('bg-gradient-to-b');
+      } else {
+        header.classList.remove('bg-[#050508]/92', 'backdrop-blur-md', 'border-b', 'border-cyber-cyan/20');
+        header.classList.add('bg-gradient-to-b');
+      }
+
+      // Parallax scroll for hero background (safe clamp preventing vertical clip)
+      const heroBg = document.getElementById('hero-bg-img');
+      if (heroBg && winScroll < window.innerHeight && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        heroBg.style.transform = `scale(var(--img-scale, 0.98)) translateY(calc(var(--img-safe-top, 0px) + ${winScroll * 0.12}px))`;
+      }
+    });
+
+    /**
+     * Intersection Observer for Staggered Scroll Reveals & Section Energy Pulse
+     */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          
+          // Single-shot scroll energy pulse
+          if (!entry.target.dataset.pulsed) {
+            entry.target.dataset.pulsed = "true";
+            entry.target.animate([
+              { filter: 'brightness(1.15) drop-shadow(0 0 10px rgba(0,229,255,0.25))' },
+              { filter: 'brightness(1) drop-shadow(0 0 0 transparent)' }
+            ], { duration: 650, easing: 'ease-out' });
+          }
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal-elem, .reveal-scan, .reveal-neon-line').forEach(el => revealObserver.observe(el));
+
+    /**
+     * Mobile Menu Toggle Logic
+     */
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+    let isMenuOpen = false;
+
+    if (mobileBtn && mobileDrawer) {
+      function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+          mobileDrawer.classList.remove('opacity-0', 'pointer-events-none');
+          mobileDrawer.classList.add('opacity-100', 'pointer-events-auto');
+          document.body.style.overflow = 'hidden';
+          document.getElementById('hamburger-line-1').style.transform = 'rotate(45deg) translate(5px, 5px)';
+          document.getElementById('hamburger-line-2').style.opacity = '0';
+          document.getElementById('hamburger-line-3').style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        } else {
+          mobileDrawer.classList.add('opacity-0', 'pointer-events-none');
+          mobileDrawer.classList.remove('opacity-100', 'pointer-events-auto');
+          document.body.style.overflow = '';
+          document.getElementById('hamburger-line-1').style.transform = 'none';
+          document.getElementById('hamburger-line-2').style.opacity = '1';
+          document.getElementById('hamburger-line-3').style.transform = 'none';
+        }
+      }
+
+      mobileBtn.addEventListener('click', toggleMenu);
+      navLinks.forEach(link => link.addEventListener('click', toggleMenu));
+    }
+
+    /**
+     * Desktop Dual-Tier Cursor System (Cyan dot + Violet Halo + Particle trail)
+     */
+    const cursorLight = document.getElementById('cursor-light');
+    const cursorHalo = document.getElementById('cursor-halo');
+    const trailCanvas = document.getElementById('cursor-trail-canvas');
+    let trailParticles = [];
+
+    if (cursorLight && cursorHalo && window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let mouseX = -100, mouseY = -100;
+      
+      const tCtx = trailCanvas.getContext('2d');
+      function resizeTrail() {
+        trailCanvas.width = window.innerWidth;
+        trailCanvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeTrail);
+      resizeTrail();
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorLight.style.opacity = '0.85';
+        cursorHalo.style.opacity = '0.55';
+        cursorLight.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+        cursorHalo.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+
+        // Push trailing micro particles (max 8)
+        if (trailParticles.length < 8 && Math.random() < 0.45) {
+          trailParticles.push({
+            x: mouseX,
+            y: mouseY,
+            size: Math.random() * 2 + 1,
+            alpha: 0.6,
+            color: Math.random() < 0.7 ? '#00E5FF' : '#7A2CFF'
+          });
+        }
+      });
+
+      window.addEventListener('mouseleave', () => {
+        cursorLight.style.opacity = '0';
+        cursorHalo.style.opacity = '0';
+      });
+
+      function renderTrail() {
+        tCtx.clearRect(0, 0, trailCanvas.width, trailCanvas.height);
+        for (let i = trailParticles.length - 1; i >= 0; i--) {
+          const p = trailParticles[i];
+          tCtx.beginPath();
+          tCtx.fillStyle = p.color;
+          tCtx.globalAlpha = p.alpha;
+          tCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          tCtx.fill();
+          p.alpha -= 0.04;
+          p.size *= 0.94;
+          if (p.alpha <= 0) trailParticles.splice(i, 1);
+        }
+        requestAnimationFrame(renderTrail);
+      }
+      renderTrail();
+    }
+
+    /**
+     * 5-PHASE CINEMATIC CLICK & TAP EVENT SYSTEM:
+     * Phase 1: Impact Flash (0-80ms)
+     * Phase 2: Circular Shockwave (80-250ms)
+     * Phase 3: Outward Particle Spark Burst (100-450ms)
+     * Phase 4: Light Streak (150-500ms)
+     * Phase 5: Smooth Reset (500-750ms)
+     */
+    function triggerCinematicImpact(e) {
+      const target = e.currentTarget;
+      const rect = target.getBoundingClientRect();
+      const x = (e.clientX !== undefined && e.clientX !== 0) ? (e.clientX - rect.left) : (rect.width / 2);
+      const y = (e.clientY !== undefined && e.clientY !== 0) ? (e.clientY - rect.top) : (rect.height / 2);
+
+      target.style.position = 'relative';
+
+      // Phase 1: Impact Flash
+      const flash = document.createElement('span');
+      flash.className = 'impact-flash';
+      target.appendChild(flash);
+      setTimeout(() => flash.remove(), 220);
+
+      // Phase 2: Shockwave Ring
+      const ripple = document.createElement('span');
+      ripple.className = 'cyber-ripple';
+      const size = Math.max(rect.width, rect.height) * 1.8;
+      ripple.style.width = ripple.style.height = `${size}px`;
+      ripple.style.left = `${x - size / 2}px`;
+      ripple.style.top = `${y - size / 2}px`;
+      target.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 650);
+
+      // Phase 3: Particle Spark Burst (6 to 12 particles)
+      const count = Math.floor(Math.random() * 7) + 6;
+      for (let i = 0; i < count; i++) {
+        const spark = document.createElement('span');
+        spark.style.position = 'absolute';
+        spark.style.pointerEvents = 'none';
+        spark.style.borderRadius = '50%';
+        spark.style.width = `${Math.random() * 3 + 2}px`;
+        spark.style.height = spark.style.width;
+        spark.style.left = `${x}px`;
+        spark.style.top = `${y}px`;
+        
+        const randColor = Math.random();
+        spark.style.backgroundColor = randColor < 0.6 ? '#00E5FF' : (randColor < 0.85 ? '#7A2CFF' : '#D4AF37');
+        spark.style.boxShadow = `0 0 8px ${spark.style.backgroundColor}`;
+        spark.style.zIndex = '68';
+
+        const angle = Math.random() * Math.PI * 2;
+        const dist = Math.random() * 55 + 20;
+        const destX = Math.cos(angle) * dist;
+        const destY = Math.sin(angle) * dist;
+
+        target.appendChild(spark);
+
+        spark.animate([
+          { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+          { transform: `translate(${destX}px, ${destY}px) scale(0)`, opacity: 0 }
+        ], {
+          duration: Math.random() * 350 + 350,
+          easing: 'cubic-bezier(0.12, 0.85, 0.25, 1)'
+        }).onfinish = () => spark.remove();
+      }
+    }
+
+    document.querySelectorAll('.cyber-btn, .cyber-btn-outline, button, .interactive-tilt-card, .gallery-card, #jog-wheel-container').forEach(btn => {
+      btn.addEventListener('click', triggerCinematicImpact);
+    });
+
+    /**
+     * 3D Perspective Card Tilt Interaction
+     */
+    if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.interactive-tilt-card').forEach(card => {
+        const light = card.querySelector('.card-bg-light');
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotX = ((y - centerY) / centerY) * -4.5;
+          const rotY = ((x - centerX) / centerX) * 4.5;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-4px)`;
+          if (light) {
+            light.style.transform = `translate(${x - centerX}px, ${y - centerY}px)`;
+          }
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+          if (light) light.style.transform = 'translate(0, 0)';
+        });
+      });
+
+      // Gallery interactive cursor gradient highlight
+      document.querySelectorAll('.gallery-card').forEach(gCard => {
+        const glow = gCard.querySelector('.card-cursor-glow');
+        gCard.addEventListener('mousemove', (e) => {
+          const rect = gCard.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          if (glow) {
+            glow.style.background = `radial-gradient(circle 220px at ${x}px ${y}px, rgba(0, 229, 255, 0.22), transparent 70%)`;
+          }
+        });
+      });
+    }
+
+    /**
+     * Multi-tiered Background Particles Canvas
+     */
+    const heroCanvas = document.getElementById('particles-canvas');
+    if (heroCanvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const ctx = heroCanvas.getContext('2d');
+      let particles = [];
+
+      function resizeHeroCanvas() {
+        heroCanvas.width = heroCanvas.parentElement.offsetWidth;
+        heroCanvas.height = heroCanvas.parentElement.offsetHeight;
+        initHeroParticles();
+      }
+
+      function initHeroParticles() {
+        particles = [];
+        const count = Math.floor((heroCanvas.width * heroCanvas.height) / 22000);
+        for (let i = 0; i < count; i++) {
+          const rand = Math.random();
+          let color = '#00E5FF';
+          let speedFactor = 1;
+
+          if (rand < 0.10) {
+            color = '#D4AF37'; // 10% Gold
+            speedFactor = 0.8;
+          } else if (rand < 0.45) {
+            color = '#7A2CFF'; // 35% Violet
+            speedFactor = 1.3;
+          } else if (rand < 0.52) {
+            color = '#FF1493'; // 7% Magenta
+            speedFactor = 1.1;
+          }
+
+          particles.push({
+            x: Math.random() * heroCanvas.width,
+            y: Math.random() * heroCanvas.height,
+            size: Math.random() * 2 + 0.6,
+            speedY: -(Math.random() * 0.35 + 0.12) * speedFactor,
+            speedX: (Math.random() - 0.5) * 0.25,
+            opacity: Math.random() * 0.55 + 0.25,
+            color: color
+          });
+        }
+      }
+
+      function renderHeroParticles() {
+        ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.globalAlpha = p.opacity;
+          ctx.fillStyle = p.color;
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+
+          p.y += p.speedY;
+          p.x += p.speedX;
+
+          if (p.y < 0) {
+            p.y = heroCanvas.height;
+            p.x = Math.random() * heroCanvas.width;
+          }
+        });
+
+        requestAnimationFrame(renderHeroParticles);
+      }
+
+      window.addEventListener('resize', resizeHeroCanvas);
+      resizeHeroCanvas();
+      renderHeroParticles();
+    }
+
+    /**
+     * Brand Statement Waveform Canvas
+     */
+    const waveCanvas = document.getElementById('waveform-canvas');
+    if (waveCanvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const ctx = waveCanvas.getContext('2d');
+      let waveStep = 0;
+
+      function resizeWave() {
+        waveCanvas.width = waveCanvas.offsetWidth;
+        waveCanvas.height = waveCanvas.offsetHeight;
+      }
+
+      function drawWaveform() {
+        ctx.clearRect(0, 0, waveCanvas.width, waveCanvas.height);
+        const midY = waveCanvas.height / 2;
+        const totalBars = 64;
+        const barWidth = 3;
+        const gap = (waveCanvas.width - (totalBars * barWidth)) / totalBars;
+
+        for (let i = 0; i < totalBars; i++) {
+          const x = i * (barWidth + gap);
+          const sine1 = Math.sin((i * 0.16) + waveStep);
+          const sine2 = Math.cos((i * 0.28) - waveStep * 0.75);
+          const barHeight = Math.abs(sine1 * 18 + sine2 * 10) + 4;
+
+          const gradient = ctx.createLinearGradient(0, midY - barHeight, 0, midY + barHeight);
+          gradient.addColorStop(0, '#EAF6FF');
+          gradient.addColorStop(0.5, '#00E5FF');
+          gradient.addColorStop(0.9, '#7A2CFF');
+          gradient.addColorStop(1, '#D4AF37'); // Subtle gold tip
+
+          ctx.fillStyle = gradient;
+          ctx.fillRect(x, midY - (barHeight / 2), barWidth, barHeight);
+        }
+
+        waveStep += 0.04;
+        requestAnimationFrame(drawWaveform);
+      }
+
+      window.addEventListener('resize', resizeWave);
+      resizeWave();
+      drawWaveform();
+    }
+
+    /**
+     * Interactive DJ Turntable Console with Dynamic Activation Sequence
+     */
+    const vinylDisc = document.getElementById('vinyl-disc');
+    const toggleTurntableBtn = document.getElementById('toggle-turntable-btn');
+    const deckEqBars = document.getElementById('deck-eq-bars');
+    const deckRingGlow = document.getElementById('deck-ring-glow');
+    let isSpinning = true;
+
+    function toggleTurntable(e) {
+      isSpinning = !isSpinning;
+      
+      // Dynamic activation ring burst
+      if (deckRingGlow) {
+        deckRingGlow.style.transition = 'box-shadow 0.15s ease, border-color 0.15s ease';
+        deckRingGlow.style.boxShadow = isSpinning 
+          ? '0 0 50px rgba(0,229,255,0.7), inset 0 0 25px rgba(122,44,255,0.5)' 
+          : '0 0 10px rgba(0,229,255,0.15)';
+        deckRingGlow.style.borderColor = isSpinning ? '#00E5FF' : 'rgba(0,229,255,0.2)';
+        
+        setTimeout(() => {
+          deckRingGlow.style.boxShadow = isSpinning 
+            ? '0 0 35px rgba(0,229,255,0.25)' 
+            : '0 0 12px rgba(0,229,255,0.1)';
+        }, 400);
+      }
+
+      if (vinylDisc) {
+        if (isSpinning) {
+          vinylDisc.classList.remove('paused');
+          if (toggleTurntableBtn) toggleTurntableBtn.textContent = 'PAUSE ROTATION';
+          if (deckEqBars) {
+            deckEqBars.style.opacity = '1';
+            deckEqBars.animate([
+              { transform: 'scaleY(1.35)' },
+              { transform: 'scaleY(1)' }
+            ], { duration: 300, easing: 'ease-out' });
+          }
+        } else {
+          vinylDisc.classList.add('paused');
+          if (toggleTurntableBtn) toggleTurntableBtn.textContent = 'RESUME ROTATION';
+          if (deckEqBars) deckEqBars.style.opacity = '0.35';
+        }
+      }
+    }
+
+    if (toggleTurntableBtn) toggleTurntableBtn.addEventListener('click', toggleTurntable);
+    const jogWheelContainer = document.getElementById('jog-wheel-container');
+    if (jogWheelContainer) jogWheelContainer.addEventListener('click', toggleTurntable);
+
+    /**
+     * Photo Gallery Lightbox Implementation (Strict Contain Mode)
+     */
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+
+    function openLightbox(index) {
+      currentLightboxIdx = index;
+      updateLightboxContent();
+      if (lightboxModal) {
+        lightboxModal.classList.remove('opacity-0', 'pointer-events-none');
+        lightboxModal.classList.add('opacity-100', 'pointer-events-auto');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightbox() {
+      if (lightboxModal) {
+        lightboxModal.classList.add('opacity-0', 'pointer-events-none');
+        lightboxModal.classList.remove('opacity-100', 'pointer-events-auto');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function nextLightbox() {
+      currentLightboxIdx = (currentLightboxIdx + 1) % GALLERY_DATA.length;
+      updateLightboxContent();
+    }
+
+    function prevLightbox() {
+      currentLightboxIdx = (currentLightboxIdx - 1 + GALLERY_DATA.length) % GALLERY_DATA.length;
+      updateLightboxContent();
+    }
+
+    function updateLightboxContent() {
+      const item = GALLERY_DATA[currentLightboxIdx];
+      if (lightboxImg && item) {
+        lightboxImg.src = item.url;
+        if (lightboxTitle) lightboxTitle.textContent = item.title;
+        if (lightboxCounter) lightboxCounter.textContent = `${currentLightboxIdx + 1} / ${GALLERY_DATA.length}`;
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (!lightboxModal || lightboxModal.classList.contains('opacity-0')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextLightbox();
+      if (e.key === 'ArrowLeft') prevLightbox();
+    });
+
+    /**
+     * Direct WhatsApp Messaging Engine
+     */
+    function openWhatsAppChat(customMessage) {
+      const msg = customMessage || "Hello DJ LUFE, I would like to inquire about booking DJ LUFE for my event.";
+      const encodedMsg = encodeURIComponent(msg);
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`;
+      window.open(url, '_blank');
+    }
+
+    /**
+     * Booking Form Dispatch to WhatsApp
+     */
+    function handleBookingSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('form-name').value.trim();
+      const phone = document.getElementById('form-phone').value.trim();
+      const eventType = document.getElementById('form-type').value;
+      const eventDate = document.getElementById('form-date').value;
+      const location = document.getElementById('form-location').value.trim();
+      const message = document.getElementById('form-message').value.trim() || "No additional notes provided.";
+
+      const feedback = document.getElementById('form-feedback');
+
+      if (!name || !phone || !eventType || !eventDate || !location) {
+        if (feedback) {
+          feedback.textContent = "Please fill in all mandatory fields before submitting.";
+          feedback.className = "mb-6 p-4 rounded-xl text-xs font-mono tracking-wider bg-red-950/80 border border-red-500/50 text-red-200 block";
+        }
+        return;
+      }
+
+      const formattedMessage = 
+`Hello DJ LUFE!
+
+I would like to inquire about booking DJ LUFE.
+
+Name:
+${name}
+
+Phone / WhatsApp:
+${phone}
+
+Event:
+${eventType}
+
+Event Date:
+${eventDate}
+
+Location:
+${location}
+
+Additional Message:
+${message}
+
+Thank you.`;
+
+      if (feedback) {
+        feedback.textContent = "Formatting details & connecting to official DJ LUFE WhatsApp...";
+        feedback.className = "mb-6 p-4 rounded-xl text-xs font-mono tracking-wider bg-cyan-950/80 border border-cyber-cyan/50 text-cyber-cyan block";
+      }
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(formattedMessage)}`;
+      setTimeout(() => {
+        window.open(url, '_blank');
+      }, 350);
+    }
+  </script>
+</body>
+</html>
